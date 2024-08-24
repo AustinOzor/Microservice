@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    #stages
     stages {
         stage('Deploy To Kubernetes') {
             steps {
