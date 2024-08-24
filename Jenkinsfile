@@ -10,14 +10,7 @@ pipeline {
                 }
             }
         }
-    }
-     stage('Verify Deployment') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-    }
-     stage('Hello') {
+        stage('Hello') {
             steps {
               withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: ' my-eks22', contextName: '', credentialsId: 'kube-token', namespace: 'webapps', serverUrl: 'https://127E9436BA00F4179627C6652364C965.gr7.us-east-1.eks.amazonaws.com']]) {
                  sh "kubectl get all -n webapps"
@@ -26,3 +19,4 @@ pipeline {
         }
     }
 }
+
